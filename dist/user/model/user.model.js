@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userDTO = exports.userLoginDTO = void 0;
+exports.userDTO = exports.userLoginSuccessDTO = exports.userLoginDTO = void 0;
 class userLoginDTO {
 }
 exports.userLoginDTO = userLoginDTO;
+class userLoginSuccessDTO {
+}
+exports.userLoginSuccessDTO = userLoginSuccessDTO;
 class userDTO {
 }
 exports.userDTO = userDTO;

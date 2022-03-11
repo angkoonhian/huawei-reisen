@@ -8,6 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
+const schedule_1 = require("@nestjs/schedule");
+const typeorm_1 = require("@nestjs/typeorm");
+const Joi = require("joi");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const user_module_1 = require("./user/user.module");
@@ -16,6 +20,23 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            schedule_1.ScheduleModule.forRoot(),
+            config_1.ConfigModule.forRoot({
+                envFilePath: './config/config.env',
+                isGlobal: true,
+                validationSchema: Joi.object({
+                    NODE_ENV: Joi.string()
+                        .valid('development', 'production')
+                        .default('development'),
+                    PORT: Joi.number().default(3000),
+                }),
+            }),
+            typeorm_1.TypeOrmModule.forRoot({
+                type: 'mysql',
+                port: 3306,
+                host: '192.168.0.215',
+                password: 'Fatfatbee01@261114',
+            }),
             user_module_1.userModule
         ],
         controllers: [app_controller_1.AppController],

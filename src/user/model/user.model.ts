@@ -3,6 +3,13 @@ export class userLoginDTO {
     password: string;
 }
 
+export class userLoginSuccessDTO {
+    userId: number;
+    username: string;
+    token: string;
+    tokenExpiration: string;
+}
+
 export class userDTO {
     userId: string;
     name: string;
