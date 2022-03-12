@@ -17,20 +17,20 @@ let user = class user {
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], user.prototype, "userId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)("varchar"),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], user.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)("varchar"),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], user.prototype, "nationality", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)("varchar"),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], user.prototype, "password", void 0);
@@ -40,12 +40,12 @@ __decorate([
     __metadata("design:type", Number)
 ], user.prototype, "age", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)("varchar"),
     (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], user.prototype, "interest", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)("varchar"),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], user.prototype, "currentItenary", void 0);

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.databaseProviders = void 0;
+const user_entity_1 = require("../user/user.entity");
 const typeorm_1 = require("typeorm");
 exports.databaseProviders = [
     {
@@ -12,6 +13,8 @@ exports.databaseProviders = [
             username: 'root',
             name: 'reisen',
             password: 'Fatfatbee01@261114',
+            database: 'reisen',
+            entities: [user_entity_1.user],
             synchronize: true,
         }),
     },

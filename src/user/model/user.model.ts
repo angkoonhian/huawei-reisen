@@ -1,11 +1,11 @@
 export class userLoginDTO {
-    username: string;
+    name: string;
     password: string;
 }
 
 export class userLoginSuccessDTO {
-    userId: number;
-    username: string;
+    userId: string;
+    name: string;
     token: string;
     tokenExpiration: string;
 }

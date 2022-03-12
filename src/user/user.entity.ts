@@ -5,17 +5,17 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 export class user {
     @PrimaryGeneratedColumn()
     @ApiProperty()
-    userId: number;
+    userId: string;
 
-    @Column()
+    @Column("varchar")
     @ApiProperty()
     name: string;
 
-    @Column()
+    @Column("varchar")
     @ApiProperty()
     nationality: string;
 
-    @Column()
+    @Column("varchar")
     @ApiProperty()
     password: string;
 
@@ -23,11 +23,11 @@ export class user {
     @ApiProperty()
     age: number;
 
-    @Column()
+    @Column("varchar")
     @ApiProperty()
-    interest: [string];
+    interest: string;
 
-    @Column()
+    @Column("varchar")
     @ApiProperty()
     currentItenary: string;
 }

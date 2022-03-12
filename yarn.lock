@@ -635,7 +635,7 @@
     "webpack" "5.66.0"
     "webpack-node-externals" "3.0.0"
 
-"@nestjs/common@^6.10.11 || ^7.0.0 || ^8.0.0", "@nestjs/common@^7.0.0 || ^8.0.0", "@nestjs/common@^7.0.8 || ^8.0.0", "@nestjs/common@^8.0.0", "@nestjs/common@^8.4.0":
+"@nestjs/common@^6.0.0 || ^7.0.0 || ^8.0.0", "@nestjs/common@^6.10.11 || ^7.0.0 || ^8.0.0", "@nestjs/common@^7.0.0 || ^8.0.0", "@nestjs/common@^7.0.8 || ^8.0.0", "@nestjs/common@^8.0.0", "@nestjs/common@^8.4.0":
   "integrity" "sha512-uvm1Ccw0qRka/Gd5Mo5A2MQo9ItwewPes1fE2SBboennPojoiJ4A3iKirtlPuxsL+HQ4oD5eO02OsDyLYL2z6w=="
   "resolved" "https://registry.npmjs.org/@nestjs/common/-/common-8.4.0.tgz"
   "version" "8.4.0"
@@ -667,6 +667,14 @@
     "path-to-regexp" "3.2.0"
     "tslib" "2.3.1"
     "uuid" "8.3.2"
+
+"@nestjs/jwt@^8.0.0":
+  "integrity" "sha512-fz2LQgYY2zmuD8S+8UE215anwKyXlnB/1FwJQLVR47clNfMeFMK8WCxmn6xdPhF5JKuV1crO6FVabb1qWzDxqQ=="
+  "resolved" "https://registry.npmjs.org/@nestjs/jwt/-/jwt-8.0.0.tgz"
+  "version" "8.0.0"
+  dependencies:
+    "@types/jsonwebtoken" "8.5.4"
+    "jsonwebtoken" "8.5.1"
 
 "@nestjs/mapped-types@1.0.1":
   "integrity" "sha512-NFvofzSinp00j5rzUd4tf+xi9od6383iY0JP7o0Bnu1fuItAUkWBgc4EKuIQ3D+c2QI3i9pG1kDWAeY27EMGtg=="
@@ -959,6 +967,13 @@
   "integrity" "sha1-7ihweulOEdK4J7y+UnC86n8+ce4="
   "resolved" "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
   "version" "0.0.29"
+
+"@types/jsonwebtoken@8.5.4":
+  "integrity" "sha512-4L8msWK31oXwdtC81RmRBAULd0ShnAHjBuKT9MRQpjP0piNrZdXyTRcKY9/UIfhGeKIT4PvF5amOOUbbT/9Wpg=="
+  "resolved" "https://registry.npmjs.org/@types/jsonwebtoken/-/jsonwebtoken-8.5.4.tgz"
+  "version" "8.5.4"
+  dependencies:
+    "@types/node" "*"
 
 "@types/mime@^1":
   "integrity" "sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw=="
@@ -3702,7 +3717,7 @@
   optionalDependencies:
     "graceful-fs" "^4.1.6"
 
-"jsonwebtoken@^8.5.1":
+"jsonwebtoken@^8.5.1", "jsonwebtoken@8.5.1":
   "integrity" "sha512-XjwVfRS6jTMsqYs0EsuJ4LGxXV14zQybNd4L2r0UvbVnSF9Af8x7p5MzbJ90Ioz/9TI41/hTCvznF/loiSzn8w=="
   "resolved" "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz"
   "version" "8.5.1"

@@ -1,9 +1,9 @@
 export declare class user {
-    userId: number;
+    userId: string;
     name: string;
     nationality: string;
     password: string;
     age: number;
-    interest: [string];
+    interest: string;
     currentItenary: string;
 }

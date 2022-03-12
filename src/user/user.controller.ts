@@ -22,10 +22,16 @@ import { user } from './user.entity';
 export class userController {
     constructor(private readonly userService: UserService) { }
     
-    // @Post('/login')
-    // @ApiOperation({ summary: 'Login user' })
-    // @ApiResponse({ status: 200, description: 'the found record', type: user })
-    // loginUser(@Body() body: {username: string, password: string}) {
-    //     return this.userService.userLogin(body.username, body.password);
-    // }
-}
+    @Post('login')
+    @ApiResponse({ status: 200, description: 'the found record', type: user })
+    loginUser(@Body() userLoginDTO: userLoginDTO) {
+        return this.userService.userLogin(userLoginDTO.name, userLoginDTO.password);
+  }
+  
+  @Get('testGetUser')
+  @ApiOperation({ summary: 'get all user' })
+  @ApiResponse({ status: 200, description: 'the found record', type: user })
+  getUser() {
+    return this.userService.getUser();
+  }
+} 
