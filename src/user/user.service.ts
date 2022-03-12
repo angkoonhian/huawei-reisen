@@ -17,39 +17,39 @@ import {
 @Injectable()
 export class UserService {
   constructor(
-    // @InjectEntityManager('userDB') private entityManagerAdmin: EntityManager,
+    @InjectEntityManager('reisen') private entityManagerAdmin: EntityManager,
   ) {}
 
-  // public async userLogin(
-  //   username: string,
-  //   password: string,
-  // ): Promise<userLoginSuccessDTO> {
-  //   try {
-  //     const adminRepo = await this.entityManagerAdmin
-  //       .createQueryBuilder()
-  //       .select('users.username, users.password')
-  //       .from('users', 'users')
-  //       .where('users.username = :username', { username: username })
-  //       .getRawMany();
-  //     if (!adminRepo) {
-  //       throw new NotFoundException('User does not exist');
-  //     }
-  //     await this.checkPassword(password, adminRepo[0].password).then((res) => {
-  //       if (!res) {
-  //         throw new BadRequestException('Invalid password');
-  //       }
-  //     });
-  //     const token = this.getSignedJwtToken(adminRepo[0]);
-  //     return {
-  //       userId: adminRepo[0].userId,
-  //       username: adminRepo[0].username,
-  //       token: token,
-  //       tokenExpiration: process.env.JWT_EXPIRE,
-  //     };
-  //   } catch (BadRequestException) {
-  //     throw BadRequestException;
-  //   }
-  // }
+  public async userLogin(
+    username: string,
+    password: string,
+  ): Promise<userLoginSuccessDTO> {
+    try {
+      const adminRepo = await this.entityManagerAdmin
+        .createQueryBuilder()
+        .select('users.username, users.password')
+        .from('users', 'users')
+        .where('users.username = :username', { username: username })
+        .getRawMany();
+      if (!adminRepo) {
+        throw new NotFoundException('User does not exist');
+      }
+      await this.checkPassword(password, adminRepo[0].password).then((res) => {
+        if (!res) {
+          throw new BadRequestException('Invalid password');
+        }
+      });
+      const token = this.getSignedJwtToken(adminRepo[0]);
+      return {
+        userId: adminRepo[0].userId,
+        username: adminRepo[0].username,
+        token: token,
+        tokenExpiration: process.env.JWT_EXPIRE,
+      };
+    } catch (BadRequestException) {
+      throw BadRequestException;
+    }
+  }
 
   private getSignedJwtToken(loginUser: userLoginDTO) {
     return sign(

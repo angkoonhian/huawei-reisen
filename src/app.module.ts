@@ -7,6 +7,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { userModule } from './user/user.module';
+import { ItineraryController } from './itinerary/itinerary.controller';
+import { ItineraryService } from './itinerary/itinerary.service';
 
 @Module({
   imports: [
@@ -24,7 +26,7 @@ import { userModule } from './user/user.module';
     DatabaseModule,
     userModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, ItineraryController],
+  providers: [AppService, ItineraryService],
 })
 export class AppModule {}

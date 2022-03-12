@@ -7,9 +7,9 @@ import { Connection } from 'typeorm';
 
 @Module({
     imports: [
-        // TypeOrmModule.forFeature([
-        //     user,
-        // ], 'userDB')
+        TypeOrmModule.forFeature([
+            user,
+        ], 'reisen')
     ],
     controllers: [userController],
     providers: [

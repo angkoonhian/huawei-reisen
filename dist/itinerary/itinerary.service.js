@@ -5,27 +5,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.userModule = void 0;
-const common_1 = require("@nestjs/common");
-const typeorm_1 = require("@nestjs/typeorm");
-const user_entity_1 = require("./user.entity");
-const user_controller_1 = require("./user.controller");
-const user_service_1 = require("./user.service");
-let userModule = class userModule {
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-userModule = __decorate([
-    (0, common_1.Module)({
-        imports: [
-            typeorm_1.TypeOrmModule.forFeature([
-                user_entity_1.user,
-            ], 'reisen')
-        ],
-        controllers: [user_controller_1.userController],
-        providers: [
-            user_service_1.UserService,
-        ],
-    })
-], userModule);
-exports.userModule = userModule;
-//# sourceMappingURL=user.module.js.map
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ItineraryService = void 0;
+const common_1 = require("@nestjs/common");
+let ItineraryService = class ItineraryService {
+    constructor() { }
+};
+ItineraryService = __decorate([
+    (0, common_1.Injectable)(),
+    __metadata("design:paramtypes", [])
+], ItineraryService);
+exports.ItineraryService = ItineraryService;
+//# sourceMappingURL=itinerary.service.js.map
