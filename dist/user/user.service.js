@@ -16,6 +16,7 @@ exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
 const jsonwebtoken_1 = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+<<<<<<< HEAD
 const typeorm_1 = require("typeorm");
 let UserService = class UserService {
     constructor(userRepository) {
@@ -36,14 +37,41 @@ let UserService = class UserService {
             console.log(user);
             await this.checkPassword(password, user.password).then((res) => {
                 console.log(res);
+=======
+const typeorm_1 = require("@nestjs/typeorm");
+const typeorm_2 = require("typeorm");
+let UserService = class UserService {
+    constructor(entityManagerAdmin) {
+        this.entityManagerAdmin = entityManagerAdmin;
+    }
+    async userLogin(username, password) {
+        try {
+            const adminRepo = await this.entityManagerAdmin
+                .createQueryBuilder()
+                .select('users.username, users.password')
+                .from('users', 'users')
+                .where('users.username = :username', { username: username })
+                .getRawMany();
+            if (!adminRepo) {
+                throw new common_1.NotFoundException('User does not exist');
+            }
+            await this.checkPassword(password, adminRepo[0].password).then((res) => {
+>>>>>>> ccb39d3a3bc96032d9dadd00e9443704d5fa12b7
                 if (!res) {
                     throw new common_1.BadRequestException('Invalid password');
                 }
             });
+<<<<<<< HEAD
             const token = this.getSignedJwtToken(user);
             return {
                 userId: user.userId,
                 name: user.name,
+=======
+            const token = this.getSignedJwtToken(adminRepo[0]);
+            return {
+                userId: adminRepo[0].userId,
+                username: adminRepo[0].username,
+>>>>>>> ccb39d3a3bc96032d9dadd00e9443704d5fa12b7
                 token: token,
                 tokenExpiration: process.env.JWT_EXPIRE,
             };
@@ -68,8 +96,13 @@ let UserService = class UserService {
 };
 UserService = __decorate([
     (0, common_1.Injectable)(),
+<<<<<<< HEAD
     __param(0, (0, common_1.Inject)('USER_REPOSITORY')),
     __metadata("design:paramtypes", [typeorm_1.Repository])
+=======
+    __param(0, (0, typeorm_1.InjectEntityManager)('reisen')),
+    __metadata("design:paramtypes", [typeorm_2.EntityManager])
+>>>>>>> ccb39d3a3bc96032d9dadd00e9443704d5fa12b7
 ], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

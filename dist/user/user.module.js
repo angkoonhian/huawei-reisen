@@ -8,6 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userModule = void 0;
 const common_1 = require("@nestjs/common");
+const typeorm_1 = require("@nestjs/typeorm");
+const user_entity_1 = require("./user.entity");
 const user_controller_1 = require("./user.controller");
 const user_service_1 = require("./user.service");
 const user_provider_1 = require("./user.provider");
@@ -17,7 +19,13 @@ let userModule = class userModule {
 userModule = __decorate([
     (0, common_1.Module)({
         imports: [
+<<<<<<< HEAD
             database_module_1.DatabaseModule,
+=======
+            typeorm_1.TypeOrmModule.forFeature([
+                user_entity_1.user,
+            ], 'reisen')
+>>>>>>> ccb39d3a3bc96032d9dadd00e9443704d5fa12b7
         ],
         controllers: [user_controller_1.userController],
         providers: [
