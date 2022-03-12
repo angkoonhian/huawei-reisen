@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import * as Joi from 'joi';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { DatabaseModule } from './database/database.module';
 import { userModule } from './user/user.module';
 
 @Module({
@@ -20,12 +21,7 @@ import { userModule } from './user/user.module';
         PORT: Joi.number().default(3000),
       }),
     }),
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      port: 3306,
-      host: '192.168.0.215',
-      password: 'Fatfatbee01@261114',
-    }),
+    DatabaseModule,
     userModule
   ],
   controllers: [AppController],
