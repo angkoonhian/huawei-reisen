@@ -15,6 +15,8 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const database_module_1 = require("./database/database.module");
 const user_module_1 = require("./user/user.module");
+const itinerary_controller_1 = require("./itinerary/itinerary.controller");
+const itinerary_service_1 = require("./itinerary/itinerary.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -34,8 +36,8 @@ AppModule = __decorate([
             database_module_1.DatabaseModule,
             user_module_1.userModule
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [app_controller_1.AppController, itinerary_controller_1.ItineraryController],
+        providers: [app_service_1.AppService, itinerary_service_1.ItineraryService],
     })
 ], AppModule);
 exports.AppModule = AppModule;
