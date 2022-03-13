@@ -5,8 +5,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import * as Joi from 'joi';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { attractionModule } from './attraction/attraction.module';
 import { DatabaseModule } from './database/database.module';
+import { dayModule } from './day/day.module';
 import { itineraryModule } from './itinerary/itinerary.module';
+import { routeModule } from './route/route.module';
 import { userModule } from './user/user.module';
 
 @Module({
@@ -24,7 +27,10 @@ import { userModule } from './user/user.module';
     }),
     DatabaseModule,
     userModule,
-    itineraryModule
+    itineraryModule,
+    attractionModule,
+    dayModule,
+    routeModule,
   ],
   controllers: [AppController],
   providers: [AppService],

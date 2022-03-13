@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ItineraryService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("typeorm");
+const uuid_1 = require("uuid");
 let ItineraryService = class ItineraryService {
     constructor(itenaryRepository) {
         this.itenaryRepository = itenaryRepository;
@@ -25,7 +26,12 @@ let ItineraryService = class ItineraryService {
             return result;
         });
     }
-    async createItinerary() {
+    async createItinerary(itinerary) {
+        itinerary.itineraryId = (0, uuid_1.v4)();
+        this.itenaryRepository.save(itinerary).then(result => {
+            console.log(result);
+            return result;
+        });
     }
 };
 ItineraryService = __decorate([

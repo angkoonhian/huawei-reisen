@@ -4,5 +4,5 @@ export declare class ItineraryService {
     private itenaryRepository;
     constructor(itenaryRepository: Repository<itinerary>);
     getItineraryById(id: any): Promise<void>;
-    createItinerary(): Promise<void>;
+    createItinerary(itinerary: itinerary): Promise<void>;
 }

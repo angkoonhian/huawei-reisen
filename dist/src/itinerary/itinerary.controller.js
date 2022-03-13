@@ -24,6 +24,9 @@ let itineraryController = class itineraryController {
     getItineraryById(id) {
         return this.itineraryService.getItineraryById(id);
     }
+    createAttraction(itinerary) {
+        return this.itineraryService.createItinerary(itinerary);
+    }
 };
 __decorate([
     (0, common_1.Get)('/:id'),
@@ -34,6 +37,15 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], itineraryController.prototype, "getItineraryById", null);
+__decorate([
+    (0, common_1.Post)('/createItinerary'),
+    (0, swagger_1.ApiOperation)({ summary: 'Create Itinerary' }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'The record has been successfully created.', type: itinerary_entity_1.itinerary }),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [itinerary_entity_1.itinerary]),
+    __metadata("design:returntype", void 0)
+], itineraryController.prototype, "createAttraction", null);
 itineraryController = __decorate([
     (0, swagger_1.ApiTags)('itinerary'),
     (0, common_1.Controller)('itinerary'),

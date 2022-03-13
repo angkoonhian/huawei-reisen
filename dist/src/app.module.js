@@ -13,8 +13,11 @@ const schedule_1 = require("@nestjs/schedule");
 const Joi = require("joi");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const attraction_module_1 = require("./attraction/attraction.module");
 const database_module_1 = require("./database/database.module");
+const day_module_1 = require("./day/day.module");
 const itinerary_module_1 = require("./itinerary/itinerary.module");
+const route_module_1 = require("./route/route.module");
 const user_module_1 = require("./user/user.module");
 let AppModule = class AppModule {
 };
@@ -34,7 +37,10 @@ AppModule = __decorate([
             }),
             database_module_1.DatabaseModule,
             user_module_1.userModule,
-            itinerary_module_1.itineraryModule
+            itinerary_module_1.itineraryModule,
+            attraction_module_1.attractionModule,
+            day_module_1.dayModule,
+            route_module_1.routeModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

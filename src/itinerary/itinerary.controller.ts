@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Body, Post } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { itinerary } from './itinerary.entity';
 import { ItineraryService } from './itinerary.service';
@@ -13,5 +13,14 @@ export class itineraryController {
     @ApiResponse({ status: 200, description: 'the found record', type: itinerary})
     getItineraryById(@Param('id') id: string) {
         return this.itineraryService.getItineraryById(id);
+    }
+
+    @Post('/createItinerary')
+    @ApiOperation({ summary: 'Create Itinerary' })
+    @ApiResponse({ status: 200, description: 'The record has been successfully created.', type: itinerary })
+    createAttraction(
+        @Body() itinerary: itinerary
+    ) {
+        return this.itineraryService.createItinerary(itinerary);
     }
 }
