@@ -1,4 +1,5 @@
 import { user } from 'src/user/user.entity';
+import { itinerary } from 'src/itinerary/itinerary.entity';
 import { createConnection } from 'typeorm';
 
 export const databaseProviders = [
@@ -12,7 +13,7 @@ export const databaseProviders = [
       name: 'reisen',
         password: 'Fatfatbee01@261114',
         database: 'reisen',
-      entities: [user],
+      entities: [user, itinerary],
       synchronize: true,
     }),
   },

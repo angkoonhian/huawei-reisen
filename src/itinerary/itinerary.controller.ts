@@ -5,14 +5,13 @@ import { ItineraryService } from './itinerary.service';
 
 @ApiTags('itinerary')
 @Controller('itinerary')
-export class ItineraryController {
+export class itineraryController {
     constructor(private itineraryService: ItineraryService) {}
 
     @Get('/:id')
     @ApiOperation({summary: 'Get User Itinerary'})
     @ApiResponse({ status: 200, description: 'the found record', type: itinerary})
     getItineraryById(@Param('id') id: string) {
-        return [];
-        //this.itineraryService.getItineraryById(id);
+        return this.itineraryService.getItineraryById(id);
     }
 }

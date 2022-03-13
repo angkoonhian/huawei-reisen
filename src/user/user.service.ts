@@ -19,9 +19,7 @@ import { user } from './user.entity';
 @Injectable()
 export class UserService {
   constructor(
-<<<<<<< HEAD
-    @Inject('USER_REPOSITORY') private userRepository: Repository<user>,
-    // @InjectEntityManager('userDB') private entityManagerAdmin: EntityManager,
+    @Inject('USER_REPOSITORY') private userRepository: Repository<user>
   ) { }
   
   public async getUser() {
@@ -30,17 +28,12 @@ export class UserService {
       return result;
     });
   }
-=======
-    @InjectEntityManager('reisen') private entityManagerAdmin: EntityManager,
-  ) {}
->>>>>>> ccb39d3a3bc96032d9dadd00e9443704d5fa12b7
 
   public async userLogin(
     username: string,
     password: string,
   ): Promise<userLoginSuccessDTO> {
     try {
-<<<<<<< HEAD
       const user = await this.userRepository.findOne({name: username});
       if (!user) {
         throw new NotFoundException('User does not exist');
@@ -48,33 +41,14 @@ export class UserService {
       console.log(user);
       await this.checkPassword(password, user.password).then((res) => {
         console.log(res);
-=======
-      const adminRepo = await this.entityManagerAdmin
-        .createQueryBuilder()
-        .select('users.username, users.password')
-        .from('users', 'users')
-        .where('users.username = :username', { username: username })
-        .getRawMany();
-      if (!adminRepo) {
-        throw new NotFoundException('User does not exist');
-      }
-      await this.checkPassword(password, adminRepo[0].password).then((res) => {
->>>>>>> ccb39d3a3bc96032d9dadd00e9443704d5fa12b7
         if (!res) {
           throw new BadRequestException('Invalid password');
         }
       });
-<<<<<<< HEAD
       const token = this.getSignedJwtToken(user);
       return {
         userId: user.userId,
         name: user.name,
-=======
-      const token = this.getSignedJwtToken(adminRepo[0]);
-      return {
-        userId: adminRepo[0].userId,
-        username: adminRepo[0].username,
->>>>>>> ccb39d3a3bc96032d9dadd00e9443704d5fa12b7
         token: token,
         tokenExpiration: process.env.JWT_EXPIRE,
       };

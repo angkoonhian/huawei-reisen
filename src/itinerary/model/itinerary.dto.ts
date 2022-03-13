@@ -1,4 +1,4 @@
-import { isNotEmpty } from "class-validator";
+// import { isNotEmpty } from "class-validator";
 import { ItineraryStatus, TravelExpectations } from "../itinerary.enum";
 
 export class itineraryDTO {

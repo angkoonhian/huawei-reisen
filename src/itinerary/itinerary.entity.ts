@@ -13,7 +13,8 @@ export class itinerary {
     @ApiProperty()
     itineraryStatus: ItineraryStatus;
 
-    @ManyToOne(type => user, user => user.userId)
+    @Column("varchar")
+    // @ManyToOne(type => user, user => user.userId)
     @ApiProperty()
     userId: string;
 
@@ -35,8 +36,9 @@ export class itinerary {
 
     @Column()
     @ApiProperty()
-    travelExpectations: [TravelExpectations];
+    travelExpectations: string;
 
-    // For route id
-    // @OneToOne(type => )
+    @Column("varchar")
+    @ApiProperty()
+    chosenRoute: string;
 }

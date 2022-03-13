@@ -14,6 +14,7 @@ const Joi = require("joi");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const database_module_1 = require("./database/database.module");
+const itinerary_module_1 = require("./itinerary/itinerary.module");
 const user_module_1 = require("./user/user.module");
 let AppModule = class AppModule {
 };
@@ -32,7 +33,8 @@ AppModule = __decorate([
                 }),
             }),
             database_module_1.DatabaseModule,
-            user_module_1.userModule
+            user_module_1.userModule,
+            itinerary_module_1.itineraryModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

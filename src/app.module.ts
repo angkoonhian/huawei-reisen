@@ -6,9 +6,8 @@ import * as Joi from 'joi';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
+import { itineraryModule } from './itinerary/itinerary.module';
 import { userModule } from './user/user.module';
-import { ItineraryController } from './itinerary/itinerary.controller';
-import { ItineraryService } from './itinerary/itinerary.service';
 
 @Module({
   imports: [
@@ -24,9 +23,10 @@ import { ItineraryService } from './itinerary/itinerary.service';
       }),
     }),
     DatabaseModule,
-    userModule
+    userModule,
+    itineraryModule
   ],
-  controllers: [AppController, ItineraryController],
-  providers: [AppService, ItineraryService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
