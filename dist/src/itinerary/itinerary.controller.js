@@ -12,17 +12,20 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ItineraryController = void 0;
+exports.itineraryController = void 0;
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const itinerary_entity_1 = require("./itinerary.entity");
 const itinerary_service_1 = require("./itinerary.service");
-let ItineraryController = class ItineraryController {
+let itineraryController = class itineraryController {
     constructor(itineraryService) {
         this.itineraryService = itineraryService;
     }
     getItineraryById(id) {
-        return [];
+        return this.itineraryService.getItineraryById(id);
+    }
+    createAttraction(itinerary) {
+        return this.itineraryService.createItinerary(itinerary);
     }
 };
 __decorate([
@@ -33,11 +36,20 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
-], ItineraryController.prototype, "getItineraryById", null);
-ItineraryController = __decorate([
+], itineraryController.prototype, "getItineraryById", null);
+__decorate([
+    (0, common_1.Post)('/createItinerary'),
+    (0, swagger_1.ApiOperation)({ summary: 'Create Itinerary' }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'The record has been successfully created.', type: itinerary_entity_1.itinerary }),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [itinerary_entity_1.itinerary]),
+    __metadata("design:returntype", void 0)
+], itineraryController.prototype, "createAttraction", null);
+itineraryController = __decorate([
     (0, swagger_1.ApiTags)('itinerary'),
     (0, common_1.Controller)('itinerary'),
     __metadata("design:paramtypes", [itinerary_service_1.ItineraryService])
-], ItineraryController);
-exports.ItineraryController = ItineraryController;
+], itineraryController);
+exports.itineraryController = itineraryController;
 //# sourceMappingURL=itinerary.controller.js.map

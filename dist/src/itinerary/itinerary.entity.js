@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.itinerary = void 0;
 const swagger_1 = require("@nestjs/swagger");
-const user_entity_1 = require("../user/user.entity");
 const typeorm_1 = require("typeorm");
 const itinerary_enum_1 = require("./itinerary.enum");
 let itinerary = class itinerary {
@@ -27,7 +26,7 @@ __decorate([
     __metadata("design:type", Number)
 ], itinerary.prototype, "itineraryStatus", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(type => user_entity_1.user, user => user.userId),
+    (0, typeorm_1.Column)("varchar"),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], itinerary.prototype, "userId", void 0);
@@ -54,8 +53,13 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)(),
     (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], itinerary.prototype, "travelExpectations", void 0);
+__decorate([
+    (0, typeorm_1.Column)("varchar"),
+    (0, swagger_1.ApiProperty)(),
+    __metadata("design:type", String)
+], itinerary.prototype, "chosenRoute", void 0);
 itinerary = __decorate([
     (0, typeorm_1.Entity)()
 ], itinerary);

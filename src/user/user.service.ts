@@ -19,8 +19,7 @@ import { user } from './user.entity';
 @Injectable()
 export class UserService {
   constructor(
-    @Inject('USER_REPOSITORY') private userRepository: Repository<user>,
-    // @InjectEntityManager('userDB') private entityManagerAdmin: EntityManager,
+    @Inject('USER_REPOSITORY') private userRepository: Repository<user>
   ) { }
   
   public async getUser() {

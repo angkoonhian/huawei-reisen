@@ -1,3 +1,8 @@
+import { Repository } from 'typeorm';
+import { itinerary } from './itinerary.entity';
 export declare class ItineraryService {
-    getItineraryById(id: string): Promise<void>;
+    private itenaryRepository;
+    constructor(itenaryRepository: Repository<itinerary>);
+    getItineraryById(id: any): Promise<void>;
+    createItinerary(itinerary: itinerary): Promise<void>;
 }

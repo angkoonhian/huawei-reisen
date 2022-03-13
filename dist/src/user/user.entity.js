@@ -15,7 +15,7 @@ const typeorm_1 = require("typeorm");
 let user = class user {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    (0, typeorm_1.PrimaryGeneratedColumn)('uuid'),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], user.prototype, "userId", void 0);

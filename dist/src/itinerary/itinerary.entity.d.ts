@@ -1,4 +1,4 @@
-import { ItineraryStatus, TravelExpectations } from "./itinerary.enum";
+import { ItineraryStatus } from "./itinerary.enum";
 export declare class itinerary {
     itineraryId: string;
     itineraryStatus: ItineraryStatus;
@@ -7,5 +7,6 @@ export declare class itinerary {
     endDate: Date;
     numDays: number;
     numPeople: number;
-    travelExpectations: [TravelExpectations];
+    travelExpectations: string;
+    chosenRoute: string;
 }
