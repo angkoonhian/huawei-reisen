@@ -9,7 +9,10 @@ import { attractionModule } from './attraction/attraction.module';
 import { DatabaseModule } from './database/database.module';
 import { dayModule } from './day/day.module';
 import { itineraryModule } from './itinerary/itinerary.module';
+import { reviewModule } from './review/review.module';
 import { routeModule } from './route/route.module';
+import { tourGuideModule } from './tourGuide/tourGuide.module';
+import { tourGuideAvailabilityModule } from './tourGuideAvailability/tourGuideAvailability.module';
 import { userModule } from './user/user.module';
 
 @Module({
@@ -31,6 +34,9 @@ import { userModule } from './user/user.module';
     attractionModule,
     dayModule,
     routeModule,
+    tourGuideModule,
+    reviewModule,
+    tourGuideAvailabilityModule
   ],
   controllers: [AppController],
   providers: [AppService],
