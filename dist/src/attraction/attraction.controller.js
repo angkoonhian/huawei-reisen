@@ -15,13 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.attractionController = void 0;
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
-const tags_service_1 = require("../tags/tags.service");
 const attraction_entity_1 = require("./attraction.entity");
 const attraction_service_1 = require("./attraction.service");
 let attractionController = class attractionController {
-    constructor(attractionService, tagsServie) {
+    constructor(attractionService) {
         this.attractionService = attractionService;
-        this.tagsServie = tagsServie;
     }
     getAllAttractions() {
         const attraction = this.attractionService.getAllAttractions();
@@ -52,7 +50,7 @@ __decorate([
 attractionController = __decorate([
     (0, swagger_1.ApiTags)('attraction'),
     (0, common_1.Controller)('attraction'),
-    __metadata("design:paramtypes", [attraction_service_1.attractionService, tags_service_1.TagsService])
+    __metadata("design:paramtypes", [attraction_service_1.attractionService])
 ], attractionController);
 exports.attractionController = attractionController;
 //# sourceMappingURL=attraction.controller.js.map

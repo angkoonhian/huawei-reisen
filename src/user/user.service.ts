@@ -11,7 +11,6 @@ import { InjectEntityManager } from '@nestjs/typeorm';
 import { EntityManager, Repository } from 'typeorm';
 import {
   userLoginDTO,
-  userDTO,
   userLoginSuccessDTO,
 } from './model/user.model';
 import { user } from './user.entity';

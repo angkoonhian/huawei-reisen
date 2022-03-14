@@ -7,7 +7,7 @@ import { attractionService } from './attraction.service';
 @ApiTags('attraction')
 @Controller('attraction')
 export class attractionController {
-    constructor(private attractionService: attractionService, private tagsServie: TagsService) {}
+    constructor(private attractionService: attractionService) {}
 
     @Get('/getAllAttractions')
     @ApiOperation({summary: 'Get one attraction'})
