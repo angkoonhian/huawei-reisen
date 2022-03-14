@@ -19,8 +19,7 @@ const day_module_1 = require("./day/day.module");
 const itinerary_module_1 = require("./itinerary/itinerary.module");
 const route_module_1 = require("./route/route.module");
 const user_module_1 = require("./user/user.module");
-const itinerary_controller_1 = require("./itinerary/itinerary.controller");
-const itinerary_service_1 = require("./itinerary/itinerary.service");
+const tags_module_1 = require("./tags/tags.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -43,9 +42,10 @@ AppModule = __decorate([
             attraction_module_1.attractionModule,
             day_module_1.dayModule,
             route_module_1.routeModule,
+            tags_module_1.tagsModule
         ],
-        controllers: [app_controller_1.AppController, itinerary_controller_1.ItineraryController],
-        providers: [app_service_1.AppService, itinerary_service_1.ItineraryService],
+        controllers: [app_controller_1.AppController],
+        providers: [app_service_1.AppService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

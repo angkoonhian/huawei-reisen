@@ -1,18 +1,21 @@
-import { Controller, Get, Param, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { TagsService } from 'src/tags/tags.service';
 import { attraction } from './attraction.entity';
 import { attractionService } from './attraction.service';
 
 @ApiTags('attraction')
 @Controller('attraction')
 export class attractionController {
-    constructor(private attractionService: attractionService) {}
+    constructor(private attractionService: attractionService, private tagsServie: TagsService) {}
 
     @Get('/:id')
     @ApiOperation({summary: 'Get User Itinerary'})
     @ApiResponse({ status: 200, description: 'the found record', type: attraction})
     getAllAttractions() {
-        return this.attractionService.getAllAttractions();
+        const attraction = this.attractionService.getAllAttractions();
+        console.log(attraction);
+        return attraction;
     }
 
     @Post('/createAttraction')

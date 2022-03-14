@@ -3,11 +3,9 @@ export declare class attraction {
     attractionName: string;
     organisation: string;
     about: string;
-    tags: string;
     location: number;
     geoLong: string;
     geoLat: string;
-    imageUrls: string;
     price: number;
     operatingHours: string;
     websiteUrl: string;

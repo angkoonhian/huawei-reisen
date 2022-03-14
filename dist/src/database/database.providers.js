@@ -7,6 +7,7 @@ const typeorm_1 = require("typeorm");
 const attraction_entity_1 = require("../attraction/attraction.entity");
 const day_entity_1 = require("../day/day.entity");
 const route_entity_1 = require("../route/route.entity");
+const tags_entity_1 = require("../tags/tags.entity");
 exports.databaseProviders = [
     {
         provide: 'DATABASE_CONNECTION',
@@ -18,7 +19,7 @@ exports.databaseProviders = [
             name: 'reisen',
             password: 'Fatfatbee01@261114',
             database: 'reisen',
-            entities: [user_entity_1.user, itinerary_entity_1.itinerary, attraction_entity_1.attraction, day_entity_1.day, route_entity_1.route],
+            entities: [user_entity_1.user, itinerary_entity_1.itinerary, attraction_entity_1.attraction, day_entity_1.day, route_entity_1.route, tags_entity_1.tag],
             synchronize: false,
         }),
     },

@@ -9,23 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.day = void 0;
+exports.TagsController = void 0;
+const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
-const typeorm_1 = require("typeorm");
-let day = class day {
+let TagsController = class TagsController {
+    constructor() { }
 };
-__decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)('uuid'),
-    (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", String)
-], day.prototype, "dayId", void 0);
-__decorate([
-    (0, typeorm_1.Column)("varchar"),
-    (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", String)
-], day.prototype, "routeId", void 0);
-day = __decorate([
-    (0, typeorm_1.Entity)()
-], day);
-exports.day = day;
-//# sourceMappingURL=day.entity.js.map
+TagsController = __decorate([
+    (0, swagger_1.ApiTags)('tags'),
+    (0, common_1.Controller)('tags'),
+    __metadata("design:paramtypes", [])
+], TagsController);
+exports.TagsController = TagsController;
+//# sourceMappingURL=tags.controller.js.map

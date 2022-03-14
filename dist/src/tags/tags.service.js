@@ -8,24 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.day = void 0;
-const swagger_1 = require("@nestjs/swagger");
-const typeorm_1 = require("typeorm");
-let day = class day {
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
 };
-__decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)('uuid'),
-    (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", String)
-], day.prototype, "dayId", void 0);
-__decorate([
-    (0, typeorm_1.Column)("varchar"),
-    (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", String)
-], day.prototype, "routeId", void 0);
-day = __decorate([
-    (0, typeorm_1.Entity)()
-], day);
-exports.day = day;
-//# sourceMappingURL=day.entity.js.map
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TagsService = void 0;
+const common_1 = require("@nestjs/common");
+const typeorm_1 = require("typeorm");
+let TagsService = class TagsService {
+    constructor(tagsRepository) {
+        this.tagsRepository = tagsRepository;
+    }
+    async getTagsByAttraction(id) {
+        this.tagsRepository.findByIds([id]).then(res => {
+            console.log(res);
+            return res;
+        });
+    }
+};
+TagsService = __decorate([
+    (0, common_1.Injectable)(),
+    __param(0, (0, common_1.Inject)('TAGS_REPOSITORY')),
+    __metadata("design:paramtypes", [typeorm_1.Repository])
+], TagsService);
+exports.TagsService = TagsService;
+//# sourceMappingURL=tags.service.js.map

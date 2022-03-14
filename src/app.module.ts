@@ -11,6 +11,9 @@ import { dayModule } from './day/day.module';
 import { itineraryModule } from './itinerary/itinerary.module';
 import { routeModule } from './route/route.module';
 import { userModule } from './user/user.module';
+import { TagsController } from './tags/tags.controller';
+import { TagsService } from './tags/tags.service';
+import { tagsModule } from './tags/tags.module';
 
 @Module({
   imports: [
@@ -31,6 +34,7 @@ import { userModule } from './user/user.module';
     attractionModule,
     dayModule,
     routeModule,
+    tagsModule
   ],
   controllers: [AppController],
   providers: [AppService],

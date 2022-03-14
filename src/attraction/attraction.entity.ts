@@ -1,5 +1,4 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Col } from "antd";
 import { user } from "src/user/user.entity";
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToOne } from "typeorm";
 
@@ -14,17 +13,12 @@ export class attraction {
     attractionName: string;
 
     @Column("varchar")
-    // @ManyToOne(type => user, user => user.userId)
     @ApiProperty()
     organisation: string;
 
     @Column('varchar')
     @ApiProperty()
     about: string;
-
-    @Column('varchar')
-    @ApiProperty()
-    tags: string;
 
     @Column()
     @ApiProperty()
@@ -37,10 +31,6 @@ export class attraction {
     @Column('point')
     @ApiProperty()
     geoLat: string;
-
-    @Column("text")
-    @ApiProperty()
-    imageUrls: string;
 
     @Column("double")
     @ApiProperty()

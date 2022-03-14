@@ -4,6 +4,7 @@ import { createConnection } from 'typeorm';
 import { attraction } from 'src/attraction/attraction.entity';
 import { day } from 'src/day/day.entity';
 import { route } from 'src/route/route.entity';
+import { tag } from 'src/tags/tags.entity';
 
 export const databaseProviders = [
   {
@@ -16,7 +17,7 @@ export const databaseProviders = [
       name: 'reisen',
         password: 'Fatfatbee01@261114',
         database: 'reisen',
-      entities: [user, itinerary, attraction, day, route],
+      entities: [user, itinerary, attraction, day, route, tag],
       synchronize: false,
     }),
   },
