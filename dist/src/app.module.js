@@ -17,7 +17,10 @@ const attraction_module_1 = require("./attraction/attraction.module");
 const database_module_1 = require("./database/database.module");
 const day_module_1 = require("./day/day.module");
 const itinerary_module_1 = require("./itinerary/itinerary.module");
+const review_module_1 = require("./review/review.module");
 const route_module_1 = require("./route/route.module");
+const tourGuide_module_1 = require("./tourGuide/tourGuide.module");
+const tourGuideAvailability_module_1 = require("./tourGuideAvailability/tourGuideAvailability.module");
 const user_module_1 = require("./user/user.module");
 const tags_module_1 = require("./tags/tags.module");
 let AppModule = class AppModule {
@@ -42,7 +45,9 @@ AppModule = __decorate([
             attraction_module_1.attractionModule,
             day_module_1.dayModule,
             route_module_1.routeModule,
-            tags_module_1.tagsModule
+            tourGuide_module_1.tourGuideModule,
+            review_module_1.reviewModule,
+            tourGuideAvailability_module_1.tourGuideAvailabilityModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

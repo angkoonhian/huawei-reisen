@@ -9,7 +9,10 @@ import { attractionModule } from './attraction/attraction.module';
 import { DatabaseModule } from './database/database.module';
 import { dayModule } from './day/day.module';
 import { itineraryModule } from './itinerary/itinerary.module';
+import { reviewModule } from './review/review.module';
 import { routeModule } from './route/route.module';
+import { tourGuideModule } from './tourGuide/tourGuide.module';
+import { tourGuideAvailabilityModule } from './tourGuideAvailability/tourGuideAvailability.module';
 import { userModule } from './user/user.module';
 import { TagsController } from './tags/tags.controller';
 import { TagsService } from './tags/tags.service';
@@ -34,7 +37,9 @@ import { tagsModule } from './tags/tags.module';
     attractionModule,
     dayModule,
     routeModule,
-    tagsModule
+    tourGuideModule,
+    reviewModule,
+    tourGuideAvailabilityModule
   ],
   controllers: [AppController],
   providers: [AppService],

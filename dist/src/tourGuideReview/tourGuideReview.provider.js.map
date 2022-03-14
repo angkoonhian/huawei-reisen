@@ -1,0 +1,1 @@
+{"version":3,"file":"tourGuideReview.provider.js","sourceRoot":"","sources":["../../../src/tourGuideReview/tourGuideReview.provider.ts"],"names":[],"mappings":";;;AACA,qEAA2D;AAE9C,QAAA,wBAAwB,GAAG;IACpC;QACI,OAAO,EAAE,4BAA4B;QACrC,UAAU,EAAE,CAAC,UAAsB,EAAE,EAAE,CAAC,UAAU,CAAC,aAAa,CAAC,wCAAe,CAAC;QACjF,MAAM,EAAE,CAAC,qBAAqB,CAAC;KAClC;CACJ,CAAA"}

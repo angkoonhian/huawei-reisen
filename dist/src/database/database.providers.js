@@ -7,7 +7,9 @@ const typeorm_1 = require("typeorm");
 const attraction_entity_1 = require("../attraction/attraction.entity");
 const day_entity_1 = require("../day/day.entity");
 const route_entity_1 = require("../route/route.entity");
-const tags_entity_1 = require("../tags/tags.entity");
+const tourGuide_entity_1 = require("../tourGuide/tourGuide.entity");
+const review_entity_1 = require("../review/review.entity");
+const tourGuideAvailability_entity_1 = require("../tourGuideAvailability/tourGuideAvailability.entity");
 exports.databaseProviders = [
     {
         provide: 'DATABASE_CONNECTION',
@@ -19,7 +21,11 @@ exports.databaseProviders = [
             name: 'reisen',
             password: 'Fatfatbee01@261114',
             database: 'reisen',
+<<<<<<< HEAD
             entities: [user_entity_1.user, itinerary_entity_1.itinerary, attraction_entity_1.attraction, day_entity_1.day, route_entity_1.route, tags_entity_1.tag],
+=======
+            entities: [user_entity_1.user, itinerary_entity_1.itinerary, attraction_entity_1.attraction, day_entity_1.day, route_entity_1.route, tourGuide_entity_1.tourGuide, review_entity_1.review, tourGuideAvailability_entity_1.tourGuideAvailability],
+>>>>>>> 6ed03f1790d9873937be12eafdb0ca034f47a079
             synchronize: false,
         }),
     },
