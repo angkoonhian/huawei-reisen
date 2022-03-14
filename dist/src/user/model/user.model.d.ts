@@ -16,3 +16,10 @@ export declare class userDTO {
     interest: [string];
     currentItenary: string;
 }
+export declare class userSignUpDTO {
+    name: string;
+    nationality: string;
+    age: number;
+    interest: [string];
+    currentItenary: string;
+}

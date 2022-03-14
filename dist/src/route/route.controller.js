@@ -27,6 +27,9 @@ let routeController = class routeController {
     createRoute(route) {
         return this.routeService.createRoute(route);
     }
+    deleteRoute(routeId) {
+        return this.routeService.deleteRoute(routeId);
+    }
 };
 __decorate([
     (0, common_1.Get)('/:itineraryId'),
@@ -46,6 +49,15 @@ __decorate([
     __metadata("design:paramtypes", [route_entity_1.route]),
     __metadata("design:returntype", void 0)
 ], routeController.prototype, "createRoute", null);
+__decorate([
+    (0, common_1.Delete)('/deleteRoute'),
+    (0, swagger_1.ApiOperation)({ summary: 'Delete Route' }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'The record has been successfully deleted.', type: route_entity_1.route }),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], routeController.prototype, "deleteRoute", null);
 routeController = __decorate([
     (0, swagger_1.ApiTags)('route'),
     (0, common_1.Controller)('route'),

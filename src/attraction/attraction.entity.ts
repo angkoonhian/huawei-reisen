@@ -30,13 +30,13 @@ export class attraction {
     @ApiProperty()
     location: number;
 
-    @Column('point')
+    @Column('double')
     @ApiProperty()
-    geoLong: string;
+    geoLong: number;
 
-    @Column('point')
+    @Column('double')
     @ApiProperty()
-    geoLat: string;
+    geoLat: number;
 
     @Column("text")
     @ApiProperty()

@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const jsonwebtoken_1 = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const typeorm_1 = require("typeorm");
+const uuid_1 = require("uuid");
 let UserService = class UserService {
     constructor(userRepository) {
         this.userRepository = userRepository;
@@ -26,6 +27,37 @@ let UserService = class UserService {
             console.log(result);
             return result;
         });
+    }
+    async updateUser(userDTO) {
+        try {
+            const user = await this.userRepository.findOne({ userId: userDTO.userId });
+            if (!user) {
+                throw new common_1.NotFoundException('User does not exist');
+            }
+            await this.userRepository.update(user.userId, userDTO);
+            return userDTO;
+        }
+        catch (BadRequestException) {
+            throw BadRequestException;
+        }
+    }
+    async signUpUser(userSignUpDTO) {
+        try {
+            userSignUpDTO['userId'] = (0, uuid_1.uuidv4)();
+            const user = await this.userRepository.findOne({ name: userSignUpDTO.name });
+            if (user) {
+                throw new common_1.BadRequestException('User already exists');
+            }
+            const hashedPassword = await this.hashPassword(userSignUpDTO.password);
+            userSignUpDTO.password = hashedPassword;
+            this.userRepository.save(userSignUpDTO).then(result => {
+                console.log(result);
+                return result;
+            });
+        }
+        catch (BadRequestException) {
+            throw BadRequestException;
+        }
     }
     async userLogin(username, password) {
         try {

@@ -18,3 +18,11 @@ export class userDTO {
     interest: [string];
     currentItenary: string;
 }
+
+export class userSignUpDTO {
+    name: string;
+    nationality: string;
+    age: number;
+    interest: [string];
+    currentItenary: string;
+}

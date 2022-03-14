@@ -8,8 +8,8 @@ import { attractionService } from './attraction.service';
 export class attractionController {
     constructor(private attractionService: attractionService) {}
 
-    @Get('/:id')
-    @ApiOperation({summary: 'Get User Itinerary'})
+    @Get('/getAllAttractions')
+    @ApiOperation({summary: 'Get one attraction'})
     @ApiResponse({ status: 200, description: 'the found record', type: attraction})
     getAllAttractions() {
         return this.attractionService.getAllAttractions();

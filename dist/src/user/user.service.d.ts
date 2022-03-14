@@ -5,6 +5,8 @@ export declare class UserService {
     private userRepository;
     constructor(userRepository: Repository<user>);
     getUser(): Promise<void>;
+    updateUser(userDTO: any): Promise<any>;
+    signUpUser(userSignUpDTO: any): Promise<void>;
     userLogin(username: string, password: string): Promise<userLoginSuccessDTO>;
     private getSignedJwtToken;
     private hashPassword;

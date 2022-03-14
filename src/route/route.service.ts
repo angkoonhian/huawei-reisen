@@ -28,4 +28,12 @@ export class routeService {
             return result;
         });
     }
+
+    public async deleteRoute(routeId) {
+        console.log(routeId);
+        this.routeRepository.delete({ routeId: routeId.routeId }).then(result => {
+            console.log(result);
+            return result;
+        });
+    }
 }

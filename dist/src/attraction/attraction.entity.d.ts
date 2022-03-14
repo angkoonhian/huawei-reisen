@@ -5,8 +5,8 @@ export declare class attraction {
     about: string;
     tags: string;
     location: number;
-    geoLong: string;
-    geoLat: string;
+    geoLong: number;
+    geoLat: number;
     imageUrls: string;
     price: number;
     operatingHours: string;

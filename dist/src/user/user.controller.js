@@ -28,6 +28,12 @@ let userController = class userController {
     getUser() {
         return this.userService.getUser();
     }
+    updateUser(userDTO) {
+        return this.userService.updateUser(userDTO);
+    }
+    signUpUser(userSignUpDTO) {
+        return this.userService.signUpUser(userSignUpDTO);
+    }
 };
 __decorate([
     (0, common_1.Post)('login'),
@@ -45,6 +51,24 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], userController.prototype, "getUser", null);
+__decorate([
+    (0, common_1.Put)('/updateUser'),
+    (0, swagger_1.ApiOperation)({ summary: 'update user' }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'the found record', type: user_entity_1.user }),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [user_model_1.userDTO]),
+    __metadata("design:returntype", void 0)
+], userController.prototype, "updateUser", null);
+__decorate([
+    (0, common_1.Post)('/signUp'),
+    (0, swagger_1.ApiOperation)({ summary: 'sign up user' }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'the found record', type: user_entity_1.user }),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [user_model_1.userSignUpDTO]),
+    __metadata("design:returntype", void 0)
+], userController.prototype, "signUpUser", null);
 userController = __decorate([
     (0, swagger_1.ApiTags)('user'),
     (0, common_1.Controller)('user'),
