@@ -4,8 +4,8 @@ export declare class attraction {
     organisation: string;
     about: string;
     location: number;
-    geoLong: string;
-    geoLat: string;
+    geoLong: number;
+    geoLat: number;
     price: number;
     operatingHours: string;
     websiteUrl: string;

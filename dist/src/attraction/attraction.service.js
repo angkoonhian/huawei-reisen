@@ -21,9 +21,14 @@ let attractionService = class attractionService {
         this.attractionRepository = attractionRepository;
     }
     async getAllAttractions() {
-        this.attractionRepository.find().then(result => {
-            console.log(result);
-            return result;
+        await this.attractionRepository.find().then(result => {
+            try {
+                console.log(result);
+                return result;
+            }
+            catch (error) {
+                throw error;
+            }
         });
     }
     async createAttraction(attraction) {

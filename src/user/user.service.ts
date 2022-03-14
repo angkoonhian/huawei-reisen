@@ -15,6 +15,7 @@ import {
   userLoginSuccessDTO,
 } from './model/user.model';
 import { user } from './user.entity';
+import { uuidv4 } from 'uuid';
 
 @Injectable()
 export class UserService {
@@ -27,6 +28,37 @@ export class UserService {
       console.log(result);
       return result;
     });
+  }
+
+  public async updateUser(userDTO) {
+    try {
+      const user = await this.userRepository.findOne({userId: userDTO.userId});
+      if (!user) {
+        throw new NotFoundException('User does not exist');
+      }
+      await this.userRepository.update(user.userId, userDTO);
+      return userDTO;
+    } catch (BadRequestException) {
+      throw BadRequestException;
+    }
+  }
+
+  public async signUpUser(userSignUpDTO) {
+    try {
+      userSignUpDTO['userId'] = uuidv4();
+      const user = await this.userRepository.findOne({name: userSignUpDTO.name});
+      if (user) {
+        throw new BadRequestException('User already exists');
+      }
+      const hashedPassword = await this.hashPassword(userSignUpDTO.password);
+      userSignUpDTO.password = hashedPassword;
+      this.userRepository.save(userSignUpDTO).then(result => {
+        console.log(result);
+        return result;
+      });
+    } catch (BadRequestException) {
+      throw BadRequestException;
+    }
   }
 
   public async userLogin(

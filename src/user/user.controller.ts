@@ -5,7 +5,8 @@ import {
     Delete,
     Get,
     Param,
-    Post,
+  Post,
+    Put
   } from '@nestjs/common';
   import {
     ApiBearerAuth,
@@ -14,7 +15,7 @@ import {
     ApiTags,
 } from '@nestjs/swagger';
 import {UserService} from './user.service';
-import { userDTO, userLoginDTO } from './model/user.model';
+import { userDTO, userLoginDTO, userSignUpDTO } from './model/user.model';
 import { user } from './user.entity';
 
 @ApiTags('user')
@@ -34,4 +35,19 @@ export class userController {
   getUser() {
     return this.userService.getUser();
   }
+
+  @Put('/updateUser')
+  @ApiOperation({ summary: 'update user' })
+  @ApiResponse({ status: 200, description: 'the found record', type: user })
+  updateUser(@Body() userDTO: userDTO) {
+    return this.userService.updateUser(userDTO);
+  }
+
+  @Post('/signUp')
+  @ApiOperation({ summary: 'sign up user' })
+  @ApiResponse({ status: 200, description: 'the found record', type: user })
+  signUpUser(@Body() userSignUpDTO: userSignUpDTO) {
+    return this.userService.signUpUser(userSignUpDTO);
+  }
+  
 } 

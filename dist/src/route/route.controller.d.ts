@@ -5,4 +5,5 @@ export declare class routeController {
     constructor(routeService: routeService);
     getAllAttractions(itineraryId: string): Promise<void>;
     createRoute(route: route): Promise<void>;
+    deleteRoute(routeId: string): Promise<void>;
 }

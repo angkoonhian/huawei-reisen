@@ -40,14 +40,14 @@ __decorate([
     __metadata("design:type", Number)
 ], attraction.prototype, "location", void 0);
 __decorate([
-    (0, typeorm_1.Column)('point'),
+    (0, typeorm_1.Column)('double'),
     (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], attraction.prototype, "geoLong", void 0);
 __decorate([
-    (0, typeorm_1.Column)('point'),
+    (0, typeorm_1.Column)('double'),
     (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], attraction.prototype, "geoLat", void 0);
 __decorate([
     (0, typeorm_1.Column)("double"),

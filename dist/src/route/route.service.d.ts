@@ -6,4 +6,5 @@ export declare class routeService {
     getRoutesByItinerary(itineraryId: any): Promise<void>;
     getRouteDays(routeId: any): Promise<void>;
     createRoute(route: route): Promise<void>;
+    deleteRoute(routeId: any): Promise<void>;
 }

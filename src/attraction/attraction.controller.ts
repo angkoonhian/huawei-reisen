@@ -9,8 +9,8 @@ import { attractionService } from './attraction.service';
 export class attractionController {
     constructor(private attractionService: attractionService, private tagsServie: TagsService) {}
 
-    @Get('/:id')
-    @ApiOperation({summary: 'Get User Itinerary'})
+    @Get('/getAllAttractions')
+    @ApiOperation({summary: 'Get one attraction'})
     @ApiResponse({ status: 200, description: 'the found record', type: attraction})
     getAllAttractions() {
         const attraction = this.attractionService.getAllAttractions();

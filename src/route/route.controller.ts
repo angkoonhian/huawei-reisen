@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Body, Post } from '@nestjs/common';
+import { Controller, Get, Param, Body, Post, Delete } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { route } from './route.entity';
 import { routeService } from './route.service';
@@ -25,4 +25,14 @@ export class routeController {
     ) {
         return this.routeService.createRoute(route);
     }
+
+    @Delete('/deleteRoute')
+    @ApiOperation({ summary: 'Delete Route' })
+    @ApiResponse({ status: 200, description: 'The record has been successfully deleted.', type: route })
+    deleteRoute(
+        @Body() routeId: string
+    ) {
+        return this.routeService.deleteRoute(routeId);
+    }
+
 }

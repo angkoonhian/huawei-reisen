@@ -37,6 +37,13 @@ let routeService = class routeService {
             return result;
         });
     }
+    async deleteRoute(routeId) {
+        console.log(routeId);
+        this.routeRepository.delete({ routeId: routeId.routeId }).then(result => {
+            console.log(result);
+            return result;
+        });
+    }
 };
 routeService = __decorate([
     (0, common_1.Injectable)(),

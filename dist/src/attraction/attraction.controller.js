@@ -33,8 +33,8 @@ let attractionController = class attractionController {
     }
 };
 __decorate([
-    (0, common_1.Get)('/:id'),
-    (0, swagger_1.ApiOperation)({ summary: 'Get User Itinerary' }),
+    (0, common_1.Get)('/getAllAttractions'),
+    (0, swagger_1.ApiOperation)({ summary: 'Get one attraction' }),
     (0, swagger_1.ApiResponse)({ status: 200, description: 'the found record', type: attraction_entity_1.attraction }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),

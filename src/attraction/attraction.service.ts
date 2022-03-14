@@ -10,9 +10,13 @@ export class attractionService {
     ) { }
     
     public async getAllAttractions() {
-        this.attractionRepository.find().then(result => {
-            console.log(result);
-            return result;
+        await this.attractionRepository.find().then(result => {
+            try {
+                console.log(result);
+                return result;
+            } catch (error) {
+                throw error;
+            }
         });
     }
 
