@@ -23,6 +23,9 @@ routeModule = __decorate([
         providers: [
             ...route_provider_1.routeProviders,
             route_service_1.routeService,
+        ],
+        exports: [
+            route_service_1.routeService,
         ]
     })
 ], routeModule);

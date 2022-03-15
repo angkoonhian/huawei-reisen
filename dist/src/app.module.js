@@ -23,11 +23,13 @@ const route_module_1 = require("./route/route.module");
 const tourGuide_module_1 = require("./tourGuide/tourGuide.module");
 const tourGuideAvailability_module_1 = require("./tourGuideAvailability/tourGuideAvailability.module");
 const user_module_1 = require("./user/user.module");
+const axios_1 = require("@nestjs/axios");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            axios_1.HttpModule,
             schedule_1.ScheduleModule.forRoot(),
             config_1.ConfigModule.forRoot({
                 envFilePath: './config/config.env',

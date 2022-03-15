@@ -12,3 +12,11 @@ export class itineraryDTO {
     travelExpectations: [TravelExpectations];
     chosenRoute: string;
 }
+
+export class itineraryMLDTO {
+    nationality: string;
+    age: number;
+    expectations: [string];
+    numPeople: number;
+    days: number;
+}

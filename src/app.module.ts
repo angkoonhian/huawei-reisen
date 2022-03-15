@@ -18,9 +18,11 @@ import { userModule } from './user/user.module';
 import { TagsController } from './tags/tags.controller';
 import { TagsService } from './tags/tags.service';
 import { tagsModule } from './tags/tags.module';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
   imports: [
+    HttpModule,
     ScheduleModule.forRoot(),
     ConfigModule.forRoot({
       envFilePath: './config/config.env',
