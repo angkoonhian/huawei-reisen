@@ -1,10 +1,8 @@
 import {
-    BadRequestException,
     Body,
     Controller,
-    Delete,
     Get,
-    Param,
+  Param,
   Post,
     Put
   } from '@nestjs/common';
@@ -29,11 +27,11 @@ export class userController {
         return this.userService.userLogin(userLoginDTO.name, userLoginDTO.password);
   }
   
-  @Get('testGetUser')
+  @Get('/:id')
   @ApiOperation({ summary: 'get all user' })
   @ApiResponse({ status: 200, description: 'the found record', type: user })
-  getUser() {
-    return this.userService.getUser();
+  getUser(@Param('id') id: string) {
+    return this.userService.getUserById(id);
   }
 
   @Put('/updateUser')
@@ -46,8 +44,8 @@ export class userController {
   @Post('/signUp')
   @ApiOperation({ summary: 'sign up user' })
   @ApiResponse({ status: 200, description: 'the found record', type: user })
-  signUpUser(@Body() userSignUpDTO: userSignUpDTO) {
-    return this.userService.signUpUser(userSignUpDTO);
+  signUpUser(@Body() userLoginDTO: userLoginDTO) {
+    return this.userService.signUpUser(userLoginDTO);
   }
   
 } 

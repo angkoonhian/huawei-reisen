@@ -22,11 +22,12 @@ let UserService = class UserService {
     constructor(userRepository) {
         this.userRepository = userRepository;
     }
-    async getUser() {
-        this.userRepository.find().then(result => {
+    async getUserById(id) {
+        const user = this.userRepository.findOne({ userId: id }).then(result => {
             console.log(result);
             return result;
         });
+        return user;
     }
     async updateUser(userDTO) {
         try {
@@ -35,7 +36,7 @@ let UserService = class UserService {
                 throw new common_1.NotFoundException('User does not exist');
             }
             await this.userRepository.update(user.userId, userDTO);
-            return userDTO;
+            return Object.assign(Object.assign({}, user), userDTO);
         }
         catch (BadRequestException) {
             throw BadRequestException;
@@ -43,14 +44,16 @@ let UserService = class UserService {
     }
     async signUpUser(userSignUpDTO) {
         try {
-            userSignUpDTO['userId'] = (0, uuid_1.uuidv4)();
+            userSignUpDTO['userId'] = (0, uuid_1.v4)();
             const user = await this.userRepository.findOne({ name: userSignUpDTO.name });
             if (user) {
                 throw new common_1.BadRequestException('User already exists');
             }
             const hashedPassword = await this.hashPassword(userSignUpDTO.password);
             userSignUpDTO.password = hashedPassword;
-            this.userRepository.save(userSignUpDTO).then(result => {
+            userSignUpDTO.interest = null;
+            userSignUpDTO.currentItenary = null;
+            const savedUser = this.userRepository.save(userSignUpDTO).then(result => {
                 console.log(result);
                 return result;
             });

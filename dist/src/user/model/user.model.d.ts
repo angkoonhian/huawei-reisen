@@ -13,7 +13,7 @@ export declare class userDTO {
     name: string;
     nationality: string;
     age: number;
-    interest: [string];
+    interest: string;
     currentItenary: string;
 }
 export declare class userSignUpDTO {

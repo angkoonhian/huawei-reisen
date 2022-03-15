@@ -22,7 +22,6 @@ const route_module_1 = require("./route/route.module");
 const tourGuide_module_1 = require("./tourGuide/tourGuide.module");
 const tourGuideAvailability_module_1 = require("./tourGuideAvailability/tourGuideAvailability.module");
 const user_module_1 = require("./user/user.module");
-const tags_module_1 = require("./tags/tags.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
