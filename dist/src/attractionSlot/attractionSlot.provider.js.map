@@ -1,0 +1,1 @@
+{"version":3,"file":"attractionSlot.provider.js","sourceRoot":"","sources":["../../../src/attractionSlot/attractionSlot.provider.ts"],"names":[],"mappings":";;;AACA,mEAAyD;AAE5C,QAAA,uBAAuB,GAAG;IACnC;QACI,OAAO,EAAE,2BAA2B;QACpC,UAAU,EAAE,CAAC,UAAsB,EAAE,EAAE,CAAC,UAAU,CAAC,aAAa,CAAC,sCAAc,CAAC;QAChF,MAAM,EAAE,CAAC,qBAAqB,CAAC;KAClC;CACJ,CAAA"}

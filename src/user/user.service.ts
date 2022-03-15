@@ -13,6 +13,7 @@ import {
   userLoginDTO,
   userDTO,
   userLoginSuccessDTO,
+  userSignUpDTO
 } from './model/user.model';
 import { user } from './user.entity';
 import { uuidv4 } from 'uuid';

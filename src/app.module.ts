@@ -6,6 +6,7 @@ import * as Joi from 'joi';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { attractionModule } from './attraction/attraction.module';
+import { attractionSlotModule } from './attractionSlot/attractionSlot.module';
 import { DatabaseModule } from './database/database.module';
 import { dayModule } from './day/day.module';
 import { itineraryModule } from './itinerary/itinerary.module';
@@ -36,7 +37,8 @@ import { userModule } from './user/user.module';
     routeModule,
     tourGuideModule,
     reviewModule,
-    tourGuideAvailabilityModule
+    tourGuideAvailabilityModule,
+    attractionSlotModule
   ],
   controllers: [AppController],
   providers: [AppService],

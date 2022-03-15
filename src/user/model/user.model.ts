@@ -21,6 +21,7 @@ export class userDTO {
 
 export class userSignUpDTO {
     name: string;
+    password: string;
     nationality: string;
     age: number;
     interest: [string];

@@ -7,6 +7,7 @@ import { route } from 'src/route/route.entity';
 import { tourGuide } from 'src/tourGuide/tourGuide.entity';
 import { review } from 'src/review/review.entity';
 import { tourGuideAvailability } from 'src/tourGuideAvailability/tourGuideAvailability.entity';
+import { attractionSlot } from 'src/attractionSlot/attractionSlot.entity';
 
 export const databaseProviders = [
   {
@@ -19,7 +20,7 @@ export const databaseProviders = [
       name: 'reisen',
         password: 'Fatfatbee01@261114',
         database: 'reisen',
-      entities: [user, itinerary, attraction, day, route, tourGuide, review, tourGuideAvailability],
+      entities: [user, itinerary, attraction, day, route, tourGuide, review, tourGuideAvailability, attractionSlot],
       synchronize: false,
     }),
   },

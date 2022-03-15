@@ -18,6 +18,7 @@ export declare class userDTO {
 }
 export declare class userSignUpDTO {
     name: string;
+    password: string;
     nationality: string;
     age: number;
     interest: [string];

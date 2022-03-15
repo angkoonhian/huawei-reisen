@@ -14,6 +14,7 @@ const Joi = require("joi");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const attraction_module_1 = require("./attraction/attraction.module");
+const attractionSlot_module_1 = require("./attractionSlot/attractionSlot.module");
 const database_module_1 = require("./database/database.module");
 const day_module_1 = require("./day/day.module");
 const itinerary_module_1 = require("./itinerary/itinerary.module");
@@ -46,7 +47,8 @@ AppModule = __decorate([
             route_module_1.routeModule,
             tourGuide_module_1.tourGuideModule,
             review_module_1.reviewModule,
-            tourGuideAvailability_module_1.tourGuideAvailabilityModule
+            tourGuideAvailability_module_1.tourGuideAvailabilityModule,
+            attractionSlot_module_1.attractionSlotModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
