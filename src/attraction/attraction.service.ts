@@ -20,6 +20,16 @@ export class attractionService {
         });
     }
 
+    public async getAttractionsById(id: string) {
+        await this.attractionRepository.findOne({attractionId: id}).then(res => {
+            try {
+                console.log(res);
+            } catch (err) {
+                throw err
+            }
+        })
+    } 
+
     public async createAttraction(attraction: attraction) {
         attraction.attractionId = uuidv4();
         this.attractionRepository.save(attraction).then(result => {

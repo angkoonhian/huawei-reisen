@@ -4,5 +4,6 @@ export declare class attractionController {
     private attractionService;
     constructor(attractionService: attractionService);
     getAllAttractions(): Promise<void>;
+    getAttractionById(id: string): Promise<void>;
     createAttraction(attraction: attraction): Promise<void>;
 }

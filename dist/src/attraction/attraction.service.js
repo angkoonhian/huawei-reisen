@@ -31,6 +31,16 @@ let attractionService = class attractionService {
             }
         });
     }
+    async getAttractionsById(id) {
+        await this.attractionRepository.findOne({ attractionId: id }).then(res => {
+            try {
+                console.log(res);
+            }
+            catch (err) {
+                throw err;
+            }
+        });
+    }
     async createAttraction(attraction) {
         attraction.attractionId = (0, uuid_1.v4)();
         this.attractionRepository.save(attraction).then(result => {
