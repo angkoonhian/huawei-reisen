@@ -24,6 +24,6 @@ export class userSignUpDTO {
     password: string;
     nationality: string;
     age: number;
-    interest: [string];
+    interest: string;
     currentItenary: string;
 }
