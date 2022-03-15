@@ -25,14 +25,14 @@ let userController = class userController {
     loginUser(userLoginDTO) {
         return this.userService.userLogin(userLoginDTO.name, userLoginDTO.password);
     }
-    getUser() {
-        return this.userService.getUser();
+    getUser(id) {
+        return this.userService.getUserById(id);
     }
     updateUser(userDTO) {
         return this.userService.updateUser(userDTO);
     }
-    signUpUser(userSignUpDTO) {
-        return this.userService.signUpUser(userSignUpDTO);
+    signUpUser(userLoginDTO) {
+        return this.userService.signUpUser(userLoginDTO);
     }
 };
 __decorate([
@@ -44,11 +44,12 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], userController.prototype, "loginUser", null);
 __decorate([
-    (0, common_1.Get)('testGetUser'),
+    (0, common_1.Get)('/:id'),
     (0, swagger_1.ApiOperation)({ summary: 'get all user' }),
     (0, swagger_1.ApiResponse)({ status: 200, description: 'the found record', type: user_entity_1.user }),
+    __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], userController.prototype, "getUser", null);
 __decorate([
@@ -66,7 +67,7 @@ __decorate([
     (0, swagger_1.ApiResponse)({ status: 200, description: 'the found record', type: user_entity_1.user }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [user_model_1.userSignUpDTO]),
+    __metadata("design:paramtypes", [user_model_1.userLoginDTO]),
     __metadata("design:returntype", void 0)
 ], userController.prototype, "signUpUser", null);
 userController = __decorate([

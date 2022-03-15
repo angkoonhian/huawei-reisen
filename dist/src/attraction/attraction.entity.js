@@ -35,11 +35,6 @@ __decorate([
     __metadata("design:type", String)
 ], attraction.prototype, "about", void 0);
 __decorate([
-    (0, typeorm_1.Column)('varchar'),
-    (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", String)
-], attraction.prototype, "tags", void 0);
-__decorate([
     (0, typeorm_1.Column)(),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", Number)
@@ -54,11 +49,6 @@ __decorate([
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", Number)
 ], attraction.prototype, "geoLat", void 0);
-__decorate([
-    (0, typeorm_1.Column)("text"),
-    (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", String)
-], attraction.prototype, "imageUrls", void 0);
 __decorate([
     (0, typeorm_1.Column)("double"),
     (0, swagger_1.ApiProperty)(),

@@ -6,17 +6,14 @@ import {
 } from '@nestjs/common';
 import { sign } from 'jsonwebtoken';
 import * as bcrypt from 'bcryptjs';
-import { isEmpty } from 'lodash';
-import { InjectEntityManager } from '@nestjs/typeorm';
-import { EntityManager, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import {
   userLoginDTO,
-  userDTO,
   userLoginSuccessDTO,
   userSignUpDTO
 } from './model/user.model';
 import { user } from './user.entity';
-import { uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class UserService {
@@ -24,11 +21,12 @@ export class UserService {
     @Inject('USER_REPOSITORY') private userRepository: Repository<user>
   ) { }
   
-  public async getUser() {
-    this.userRepository.find().then(result => {
+  public async getUserById(id: string) {
+    const user = this.userRepository.findOne({userId: id}).then(result => {
       console.log(result);
       return result;
     });
+    return user;
   }
 
   public async updateUser(userDTO) {
@@ -38,7 +36,7 @@ export class UserService {
         throw new NotFoundException('User does not exist');
       }
       await this.userRepository.update(user.userId, userDTO);
-      return userDTO;
+      return {...user, ...userDTO};
     } catch (BadRequestException) {
       throw BadRequestException;
     }
@@ -53,10 +51,13 @@ export class UserService {
       }
       const hashedPassword = await this.hashPassword(userSignUpDTO.password);
       userSignUpDTO.password = hashedPassword;
-      this.userRepository.save(userSignUpDTO).then(result => {
+      userSignUpDTO.interest = null;
+      userSignUpDTO.currentItenary = null;
+      const savedUser = this.userRepository.save(userSignUpDTO).then(result => {
         console.log(result);
         return result;
       });
+      // return savedUser;
     } catch (BadRequestException) {
       throw BadRequestException;
     }

@@ -22,7 +22,9 @@ let attractionController = class attractionController {
         this.attractionService = attractionService;
     }
     getAllAttractions() {
-        return this.attractionService.getAllAttractions();
+        const attraction = this.attractionService.getAllAttractions();
+        console.log(attraction);
+        return attraction;
     }
     createAttraction(attraction) {
         return this.attractionService.createAttraction(attraction);
