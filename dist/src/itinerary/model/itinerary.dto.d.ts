@@ -10,3 +10,10 @@ export declare class itineraryDTO {
     travelExpectations: [TravelExpectations];
     chosenRoute: string;
 }
+export declare class itineraryMLDTO {
+    nationality: string;
+    age: number;
+    expectations: [string];
+    numPeople: number;
+    days: number;
+}

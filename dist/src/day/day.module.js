@@ -23,6 +23,9 @@ dayModule = __decorate([
         providers: [
             ...day_provider_1.dayProviders,
             day_service_1.dayService,
+        ],
+        exports: [
+            day_service_1.dayService,
         ]
     })
 ], dayModule);

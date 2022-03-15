@@ -12,6 +12,9 @@ import { dayService } from "./day.service";
     providers: [
         ...dayProviders,
         dayService,
+    ],
+    exports: [
+        dayService,
     ]
 })
 

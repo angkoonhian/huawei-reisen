@@ -23,6 +23,9 @@ attractionSlotModule = __decorate([
         providers: [
             ...attractionSlot_provider_1.attractionSlotProviders,
             attractionSlot_service_1.attractionSlotService,
+        ],
+        exports: [
+            attractionSlot_service_1.attractionSlotService,
         ]
     })
 ], attractionSlotModule);

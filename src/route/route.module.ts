@@ -12,6 +12,9 @@ import { routeService } from "./route.service";
     providers: [
         ...routeProviders,
         routeService,
+    ],
+    exports: [
+        routeService,
     ]
 })
 

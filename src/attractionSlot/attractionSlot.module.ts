@@ -12,6 +12,9 @@ import { attractionSlotService } from "./attractionSlot.service";
     providers: [
         ...attractionSlotProviders,
         attractionSlotService,
+    ],
+    exports: [
+        attractionSlotService,
     ]
 })
 
