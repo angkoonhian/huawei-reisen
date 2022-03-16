@@ -14,7 +14,6 @@ export class attractionController {
     @ApiResponse({ status: 200, description: 'the found record', type: attraction})
     getAllAttractions() {
         const attraction = this.attractionService.getAllAttractions();
-        console.log(attraction);
         return attraction;
     }
 

@@ -9,6 +9,7 @@ export declare class attraction {
     price: number;
     operatingHours: string;
     websiteUrl: string;
+    imageUrls: string;
     contactNumber: string;
     reviewCount: number;
     likes: number;

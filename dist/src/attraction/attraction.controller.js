@@ -23,7 +23,6 @@ let attractionController = class attractionController {
     }
     getAllAttractions() {
         const attraction = this.attractionService.getAllAttractions();
-        console.log(attraction);
         return attraction;
     }
     getAttractionById(id) {

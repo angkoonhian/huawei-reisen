@@ -21,25 +21,27 @@ let attractionService = class attractionService {
         this.attractionRepository = attractionRepository;
     }
     async getAllAttractions() {
-        await this.attractionRepository.find().then(result => {
+        const res = await this.attractionRepository.find().then(result => {
             try {
-                console.log(result);
                 return result;
             }
             catch (error) {
                 throw error;
             }
         });
+        return res;
     }
     async getAttractionsById(id) {
-        await this.attractionRepository.findOne({ attractionId: id }).then(res => {
+        const res = await this.attractionRepository.findOne({ attractionId: id }).then(res => {
             try {
                 console.log(res);
+                return res;
             }
             catch (err) {
                 throw err;
             }
         });
+        return res;
     }
     async createAttraction(attraction) {
         attraction.attractionId = (0, uuid_1.v4)();
