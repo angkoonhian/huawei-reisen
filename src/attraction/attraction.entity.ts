@@ -44,6 +44,10 @@ export class attraction {
     @ApiProperty()
     websiteUrl: string;
 
+    @Column("text")
+    @ApiProperty()
+    imageUrls: string;
+
     @Column("varchar")
     @ApiProperty()
     contactNumber: string;

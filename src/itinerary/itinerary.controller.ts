@@ -30,7 +30,7 @@ export class itineraryController {
     @ApiResponse({ status: 200, description: 'The record has been successfully created.', type: itinerary })
     generateItinerary(
         @Body() itineraryMLDTO: itineraryMLDTO
-    ) {
+    ) { 
         return this.itineraryService.generateItinerary(itineraryMLDTO);
     }
 }

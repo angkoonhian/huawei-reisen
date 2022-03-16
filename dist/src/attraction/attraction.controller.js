@@ -23,8 +23,10 @@ let attractionController = class attractionController {
     }
     getAllAttractions() {
         const attraction = this.attractionService.getAllAttractions();
-        console.log(attraction);
         return attraction;
+    }
+    getAttractionById(id) {
+        return this.attractionService.getAttractionsById(id);
     }
     createAttraction(attraction) {
         return this.attractionService.createAttraction(attraction);
@@ -38,6 +40,15 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], attractionController.prototype, "getAllAttractions", null);
+__decorate([
+    (0, common_1.Get)('getAttractionById/:id'),
+    (0, swagger_1.ApiOperation)({ summary: "Get attraction by id" }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'the found record', type: attraction_entity_1.attraction }),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], attractionController.prototype, "getAttractionById", null);
 __decorate([
     (0, common_1.Post)('/createAttraction'),
     (0, swagger_1.ApiOperation)({ summary: 'Create Attraction' }),

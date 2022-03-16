@@ -10,15 +10,28 @@ export class attractionService {
     ) { }
     
     public async getAllAttractions() {
-        await this.attractionRepository.find().then(result => {
+        const res = await this.attractionRepository.find().then(result => {
             try {
-                console.log(result);
+                //console.log(result);
                 return result;
             } catch (error) {
                 throw error;
             }
         });
+        return res;
     }
+
+    public async getAttractionsById(id: string) {
+        const res = await this.attractionRepository.findOne({attractionId: id}).then(res => {
+            try {
+                console.log(res);
+                return res;
+            } catch (err) {
+                throw err
+            }
+        })
+        return res;
+    } 
 
     public async createAttraction(attraction: attraction) {
         attraction.attractionId = uuidv4();

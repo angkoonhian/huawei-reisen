@@ -65,6 +65,11 @@ __decorate([
     __metadata("design:type", String)
 ], attraction.prototype, "websiteUrl", void 0);
 __decorate([
+    (0, typeorm_1.Column)("text"),
+    (0, swagger_1.ApiProperty)(),
+    __metadata("design:type", String)
+], attraction.prototype, "imageUrls", void 0);
+__decorate([
     (0, typeorm_1.Column)("varchar"),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
